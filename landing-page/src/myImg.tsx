@@ -20,16 +20,12 @@ export default function Mybuilding() {
       color="secondary"
       size="lg" />
     <Image
-    // autoResize
-    // showSkeleton
-    // width={320}
     height={180}  
     maxDelay={100}
       src={Engrane}
       alt="Pagina en construccion"
       objectFit="cover"
     />
-    <MyForm></MyForm>
     </>
   );
 }
