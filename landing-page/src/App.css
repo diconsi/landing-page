@@ -2,7 +2,11 @@ a, form {
   text-align: center;
 }
 
-
+.loading {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
 
 .App-logo {
   height: 40vmin;

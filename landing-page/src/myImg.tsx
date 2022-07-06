@@ -1,6 +1,5 @@
 import { Text, Image, Loading } from "@nextui-org/react";
 import  Engrane  from "./img/engrane.jpg"
-import MyForm from "./myForm";
 
 export default function Mybuilding() {
   return (
@@ -16,6 +15,7 @@ export default function Mybuilding() {
         Site Under Construction
       </Text>
       <Loading 
+      className="loading"
       type="points-opacity"
       color="secondary"
       size="lg" />
