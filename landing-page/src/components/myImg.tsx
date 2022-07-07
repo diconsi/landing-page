@@ -1,5 +1,5 @@
 import { Text, Image, Loading } from "@nextui-org/react";
-import  Engrane  from "./img/engrane.jpg"
+import  Engrane  from "../img/engrane.jpg"
 
 export default function Mybuilding() {
   return (

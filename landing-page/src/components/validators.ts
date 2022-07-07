@@ -1,4 +1,4 @@
-const ageValidator = (value) => {
+const ageValidator = (value:number) => {
     return value >=18 && value <=65;
 }
 

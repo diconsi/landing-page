@@ -1,14 +1,19 @@
+import { watch } from "fs";
 import { useForm } from "react-hook-form";
-import { ageValidator } from "./validator";
+import { ageValidator } from "./validators";
 
 
 export default function MyFormH () {
-    const { register, formState: { errors }, handleSubmit } = useForm<{
+    const { register, formState: { errors }, watch, handleSubmit } = useForm<{
         name: string,
         email: string,
         adress: string,
-        age: string,
+        age: number,
         country: string
+        defaultValues: {
+            nombre: 'Luis',
+            direccion: 'Calle Gran Via'
+        }
     }>();
 
     const onSubmit = (data) => {
@@ -17,6 +22,8 @@ export default function MyFormH () {
 
     return (
         <>
+        <h2>Formulario</h2>
+        Nombre: {watch('name')}
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label>name:</label>
@@ -44,7 +51,7 @@ export default function MyFormH () {
             <div>
                 <label>Age:</label>
                 <input type="text" {...register('age',{
-                    validator: ageValidator
+                    "validate": ageValidator
                 })}/>
                 {errors.age && <p>La edad debe estar entre 18 y 65</p>}
             </div>
