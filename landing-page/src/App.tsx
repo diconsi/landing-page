@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import Mybuilding from './myImg'
-import MyFormH from './MyForms'
+import Mybuilding from './components/myImg'
+import MyFormH from './components/MyForms'
 
 function App() {
   const [count, setCount] = useState(0)
