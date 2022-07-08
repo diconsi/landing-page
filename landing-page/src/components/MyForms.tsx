@@ -36,34 +36,33 @@ export default function MyFormH () {
         {/* Nombre: {watch('name')} */}
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                {errors.name?.message && <p>{errors.name?.message}</p>}
                 <Spacer y={1} />
                 <Input labelPlaceholder="Name" type="text" {...register('name', {
                     required: true,
                     maxLength: 10, 
                 })}/>
+                {errors.name?.message && <p>{errors.name?.message}</p>}
                 <Spacer y={2} />
             </div>
                 <div>
-                {errors.lastName?.message && <p>{errors.lastName?.message}</p>}
                 <Spacer y={1} />
                 <Input labelPlaceholder="Last Name" type="text" {...register('lastName', {
-                        required: true, 
-                    })}/>
+                    required: true, 
+                })}/>
                 <Spacer y={2} />
+                {errors.lastName?.message && <p>{errors.lastName?.message}</p>}
                 </div>
             <div>
-                {errors.email?.message && <p>{errors.email?.message}</p>}
                 <Spacer y={1} />     
                 <Input labelPlaceholder="E-mail" {...register('email', {
-                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
                 })}/>
+                {errors.email?.message && <p>{errors.email?.message}</p>}
                 <Spacer y={2} />
             </div>
             <div>
-                {errors.phone?.message && <p>{errors.phone?.message}</p>}
                 <Spacer y={1} /> 
-                <Input  labelPlaceholder="Phone" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" {...register('phone',{ valueAsNumber: true })}/>
+                <Input  labelPlaceholder="Phone" type="tel" {...register('phone',{ valueAsNumber: true })}/>
+                {errors.phone?.message && <p>{errors.phone?.message}</p>}
                 <Spacer y={2} />
             </div>
             <div>
