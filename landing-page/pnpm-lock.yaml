@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@hookform/resolvers': ^2.9.4
   '@nextui-org/react': ^1.0.0-beta.9
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
@@ -10,12 +11,15 @@ specifiers:
   react-hook-form: ^7.33.1
   typescript: ^4.6.3
   vite: ^2.9.9
+  zod: ^3.17.3
 
 dependencies:
+  '@hookform/resolvers': 2.9.4_react-hook-form@7.33.1
   '@nextui-org/react': 1.0.0-beta.9_react-dom@18.2.0+react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-hook-form: 7.33.1_react@18.2.0
+  zod: 3.17.3
 
 devDependencies:
   '@types/react': 18.0.14
@@ -323,6 +327,14 @@ packages:
     resolution: {integrity: sha512-YmLcX70BxoSopLFdLr1Ds99NdlTI2oWoLbaUW2M406lxOIPzE1KQhRz2fPUkq34xVZQaihCoU29h0KK7An3bhA==}
     dependencies:
       tslib: 2.4.0
+    dev: false
+
+  /@hookform/resolvers/2.9.4_react-hook-form@7.33.1:
+    resolution: {integrity: sha512-rVqwNB5Z5J67QGsJWp9a46z4+MJq8YDUXX8mMIr6hEsGD4bs6c7Jtel+ZNvk0aFfywGRwIEMfmQUrpxjWQck3w==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.33.1_react@18.2.0
     dev: false
 
   /@internationalized/date/3.0.0:
@@ -1697,3 +1709,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
+
+  /zod/3.17.3:
+    resolution: {integrity: sha512-4oKP5zvG6GGbMlqBkI5FESOAweldEhSOZ6LI6cG+JzUT7ofj1ZOC0PJudpQOpT1iqOFpYYtX5Pw0+o403y4bcg==}
+    dev: false
