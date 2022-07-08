@@ -12,7 +12,7 @@ const schema = z.object({
   });
 
 export default function MyFormH () {
-    const { register, formState: { errors }, watch, handleSubmit } = useForm<{
+    const { register, formState: { errors }, watch, handleSubmit, reset } = useForm<{
         name: string,
         email: string,
         address: string,
@@ -88,7 +88,8 @@ export default function MyFormH () {
         Success
         </Checkbox>
             </div>
-            <Button  flat color="success"> Enviar </Button>
+            <Button type="submit"  flat color="success"> Enviar </Button>
+            <Button onClick={()=>reset()} flat color="success"> Reset </Button>
         </form>
         </Row>
         </Container>
