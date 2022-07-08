@@ -1,20 +1,23 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@hookform/resolvers': ^2.9.4
+  '@hookform/resolvers': ^2.9.5
+  '@iconify/icons-ph': ^1.2.2
+  '@iconify/react': ^3.2.2
   '@nextui-org/react': ^1.0.0-beta.9
-  '@types/react': ^18.0.0
-  '@types/react-dom': ^18.0.0
-  '@vitejs/plugin-react': ^1.3.0
-  react: ^18.0.0
-  react-dom: ^18.0.0
+  '@types/react': ^18.0.15
+  '@types/react-dom': ^18.0.6
+  '@vitejs/plugin-react': ^1.3.2
+  react: ^18.2.0
+  react-dom: ^18.2.0
   react-hook-form: ^7.33.1
-  typescript: ^4.6.3
-  vite: ^2.9.9
+  typescript: ^4.7.4
+  vite: ^2.9.14
   zod: ^3.17.3
 
 dependencies:
-  '@hookform/resolvers': 2.9.4_react-hook-form@7.33.1
+  '@hookform/resolvers': 2.9.5_react-hook-form@7.33.1
+  '@iconify/icons-ph': 1.2.2
   '@nextui-org/react': 1.0.0-beta.9_react-dom@18.2.0+react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -22,11 +25,12 @@ dependencies:
   zod: 3.17.3
 
 devDependencies:
-  '@types/react': 18.0.14
-  '@types/react-dom': 18.0.5
+  '@iconify/react': 3.2.2_react@18.2.0
+  '@types/react': 18.0.15
+  '@types/react-dom': 18.0.6
   '@vitejs/plugin-react': 1.3.2
   typescript: 4.7.4
-  vite: 2.9.13
+  vite: 2.9.14
 
 packages:
 
@@ -329,12 +333,30 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@hookform/resolvers/2.9.4_react-hook-form@7.33.1:
-    resolution: {integrity: sha512-rVqwNB5Z5J67QGsJWp9a46z4+MJq8YDUXX8mMIr6hEsGD4bs6c7Jtel+ZNvk0aFfywGRwIEMfmQUrpxjWQck3w==}
+  /@hookform/resolvers/2.9.5_react-hook-form@7.33.1:
+    resolution: {integrity: sha512-4XABrKdE4GpX6v2RZ+Ij1Wrl9qPEl5ZvVhFxROY+SZhP/6TU8gPw0LO4ZS9/GgIbTx3Pw1U8HmcXVAoGOq+7iA==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
       react-hook-form: 7.33.1_react@18.2.0
+    dev: false
+
+  /@iconify/icons-ph/1.2.2:
+    resolution: {integrity: sha512-U6L8XN+NpmYtWxZ2rFGvyWozst2G6LgC0Jb0H9drXunBOO2FkvLKyU8+qYfeFofAsIHTojsiAN5SGlKOTpAOMA==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: false
+
+  /@iconify/react/3.2.2_react@18.2.0:
+    resolution: {integrity: sha512-z3+Jno3VcJzgNHsN5mEvYMsgCkOZkydqdIwOxjXh45+i2Vs9RGH68Y52vt39izwFSfuYUXhaW+1u7m7+IhCn/g==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      react: 18.2.0
+    dev: true
+
+  /@iconify/types/1.1.0:
+    resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
     dev: false
 
   /@internationalized/date/3.0.0:
@@ -1104,14 +1126,14 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react-dom/18.0.5:
-    resolution: {integrity: sha512-OWPWTUrY/NIrjsAPkAk1wW9LZeIjSvkXRhclsFO8CZcZGCOg2G0YZy4ft+rOyYxy8B7ui5iZzi9OkDebZ7/QSA==}
+  /@types/react-dom/18.0.6:
+    resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
     dependencies:
-      '@types/react': 18.0.14
+      '@types/react': 18.0.15
     dev: true
 
-  /@types/react/18.0.14:
-    resolution: {integrity: sha512-x4gGuASSiWmo0xjDLpm5mPb52syZHJx02VKbqUKdLmKtAwIh63XClGsiTI1K6DO5q7ox4xAsQrU+Gl3+gGXF9Q==}
+  /@types/react/18.0.15:
+    resolution: {integrity: sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -1686,8 +1708,8 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite/2.9.13:
-    resolution: {integrity: sha512-AsOBAaT0AD7Mhe8DuK+/kE4aWYFMx/i0ZNi98hJclxb4e0OhQcZYUrvLjIaQ8e59Ui7txcvKMiJC1yftqpQoDw==}
+  /vite/2.9.14:
+    resolution: {integrity: sha512-P/UCjSpSMcE54r4mPak55hWAZPlyfS369svib/gpmz8/01L822lMPOJ/RYW6tLCe1RPvMvOsJ17erf55bKp4Hw==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:

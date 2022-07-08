@@ -1,22 +1,21 @@
 import { useForm } from "react-hook-form";
-import { ageValidator } from "./validators";
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Button, Card, Checkbox, Container, Grid, Input, Row, Text } from "@nextui-org/react";
+import { Button, Checkbox, Container, Grid, Input, Row, Spacer} from "@nextui-org/react";
 
 const schema = z.object({
-    name: z.string().min(1).max(10, {message: "No más de 10 caracteres"}),
-    age: z.number().min(18, {message: "Edad minima de 18 años"}),
-    email: z.string().email({ message: "Correo incorrecto" }),
-    address: z.string().min(1),
+    name: z.string().min(1, {message: "At least 1 characters"}).max(10, {message: "must contain 10 or fewer items"}),
+    lastName: z.string().min(1),
+    email: z.string().email({ message: "wrong email" }),
+    phone: z.number().min(1, {message: "At least 1 characters"}).max(10, {message: "must contain 10 or fewer items"})
   });
 
 export default function MyFormH () {
     const { register, formState: { errors }, watch, handleSubmit, reset } = useForm<{
         name: string,
         email: string,
-        address: string,
-        age: number,
+        lastName: string,
+        phone: number,
     }>({
         // defaultValues: {
         //     name: 'Luis',
@@ -37,59 +36,47 @@ export default function MyFormH () {
         {/* Nombre: {watch('name')} */}
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <Text h1
-            size={16}
-            css={{
-            textGradient: "45deg, $blue600 -20%, $pink600 50%",
-            }}
-            weight="bold">Name:</Text>
-                <Input type="text" {...register('name', {
+                {errors.name?.message && <p>{errors.name?.message}</p>}
+                <Spacer y={1} />
+                <Input labelPlaceholder="Name" type="text" {...register('name', {
                     required: true,
                     maxLength: 10, 
                 })}/>
-            {errors.name?.message && <p>{errors.name?.message}</p>}
+                <Spacer y={2} />
             </div>
                 <div>
-                <Text h1
-        size={16}
-        css={{
-          textGradient: "45deg, $blue600 -20%, $pink600 50%",
-        }}
-        weight="bold">Addres:</Text>
-                    <Input type="text" {...register('address', {
+                {errors.lastName?.message && <p>{errors.lastName?.message}</p>}
+                <Spacer y={1} />
+                <Input labelPlaceholder="Last Name" type="text" {...register('lastName', {
                         required: true, 
                     })}/>
-            {errors.address?.message && <p>{errors.address?.message}</p>}
+                <Spacer y={2} />
                 </div>
             <div>
-            <Text h1
-        size={16}
-        css={{
-          textGradient: "45deg, $blue600 -20%, $pink600 50%",
-        }}
-        weight="bold">E-mail:</Text>
-        <Input type="text" {...register('email', {
-        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
-        })}></Input>
-            {errors.email?.message && <p>{errors.email?.message}</p>}
+                {errors.email?.message && <p>{errors.email?.message}</p>}
+                <Spacer y={1} />     
+                <Input labelPlaceholder="E-mail" {...register('email', {
+                pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
+                })}/>
+                <Spacer y={2} />
             </div>
             <div>
-            <Text h1
-        size={16}
-        css={{
-          textGradient: "45deg, $blue600 -20%, $pink600 50%",
-        }}
-        weight="bold">Age:</Text>
-        <Input type="number" {...register('age',{ valueAsNumber: true })}/>
-            {errors.age?.message && <p>{errors.age?.message}</p>}
+                {errors.phone?.message && <p>{errors.phone?.message}</p>}
+                <Spacer y={1} /> 
+                <Input  labelPlaceholder="Phone" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" {...register('phone',{ valueAsNumber: true })}/>
+                <Spacer y={2} />
             </div>
             <div>
-        <Checkbox color="success" defaultSelected={true}>
-        Success
-        </Checkbox>
+                <Checkbox isRounded={true} color="success" defaultSelected={true}>
+                Success
+                </Checkbox>
+                <Spacer y={2} />
             </div>
-            <Button type="submit"  flat color="success"> Enviar </Button>
-            <Button onClick={()=>reset()} flat color="success"> Reset </Button>
+            <Row>
+            <Button size="xs" type="submit" bordered color="success"> Enviar </Button>
+            <Spacer x={2} />
+            <Button size="xs" onClick={()=>reset()} bordered color="error"> Reset </Button>
+            </Row>
         </form>
         </Row>
         </Container>

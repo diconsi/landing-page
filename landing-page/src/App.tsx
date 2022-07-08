@@ -9,6 +9,8 @@ function App() {
     <NextUIProvider theme={createTheme({ type: 'dark' })}>
       <div style={{ display: 'grid', placeContent: 'center', minHeight: '100vh' }}>
         <UnderConstruction />
+        <br />
+        <MyFormH></MyFormH>
       </div>
     </NextUIProvider >
   )
