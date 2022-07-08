@@ -73,9 +73,9 @@ export default function MyFormH () {
                 <Spacer y={2} />
             </div>
             <Row>
-            <Button size="xs" type="submit" bordered color="success"> Enviar </Button>
-            <Spacer x={2} />
             <Button size="xs" onClick={()=>reset()} bordered color="error"> Reset </Button>
+            <Spacer x={2} />
+            <Button size="xs" type="submit" bordered color="success"> Enviar </Button>
             </Row>
         </form>
         </Row>
