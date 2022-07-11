@@ -6,6 +6,7 @@ specifiers:
   '@pothos/core': ^3.12.2
   graphql: ^16.5.0
   graphql-ez: ^0.15.1
+  prisma: ^4.0.0
 
 dependencies:
   '@graphql-ez/fastify': 0.11.0_ntmw7gwgaxsi3yizy35ygkaaca
@@ -13,6 +14,9 @@ dependencies:
   '@pothos/core': 3.12.2_graphql@16.5.0
   graphql: 16.5.0
   graphql-ez: 0.15.1_graphql@16.5.0
+
+devDependencies:
+  prisma: 4.0.0
 
 packages:
 
@@ -102,6 +106,11 @@ packages:
       graphql: 16.5.0
     dev: false
 
+  /@prisma/engines/3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11:
+    resolution: {integrity: sha512-u/rG4lDHALolWBLr3yebZ+N2qImp3SDMcu7bHNJuRDaYvYEXy/MqfNRNEgd9GoPsXL3gofYf0VzJf2AmCG3YVw==}
+    requiresBuild: true
+    dev: true
+
   /altair-static-slim/4.4.1:
     resolution: {integrity: sha512-EzzBe6WG/mxK6J1DICW94huTSEHFoQSrJBEYxHpMZ+WuQXDX6tk2nEcCQIOoIJtMITh81Cnx9j1L0rmrXZI3gQ==}
     dev: false
@@ -165,6 +174,15 @@ packages:
     dependencies:
       whatwg-url: 5.0.0
     dev: false
+
+  /prisma/4.0.0:
+    resolution: {integrity: sha512-Dtsar03XpCBkcEb2ooGWO/WcgblDTLzGhPcustbehwlFXuTMliMDRzXsfygsgYwQoZnAUKRd1rhpvBNEUziOVw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 3.16.0-49.da41d2bb3406da22087b849f0e911199ba4fbf11
+    dev: true
 
   /tiny-lru/8.0.2:
     resolution: {integrity: sha512-ApGvZ6vVvTNdsmt676grvCkUCGwzG9IqXma5Z07xJgiC5L7akUMof5U8G2JTI9Rz/ovtVhJBlY6mNhEvtjzOIg==}
