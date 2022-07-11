@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@graphql-ez/fastify': ^0.11.0
   '@graphql-ez/plugin-altair': ^0.9.10
+  '@pothos/core': ^3.12.2
   '@prisma/client': ^4.0.0
   '@tsconfig/node18': ^1.0.1
   '@types/node': ^18.0.3
@@ -17,6 +18,7 @@ specifiers:
 dependencies:
   '@graphql-ez/fastify': 0.11.0_d23utis7ky4z4icm55yi6up2mi
   '@graphql-ez/plugin-altair': 0.9.10_ha72mwjd54xerywqh7hp23wyc4
+  '@pothos/core': 3.12.2_graphql@16.5.0
   '@prisma/client': 4.0.0_prisma@4.0.0
   fastify: 4.2.0
   graphql: 16.5.0
@@ -155,6 +157,14 @@ packages:
     resolution: {integrity: sha512-+uZMo0whkR0WbG3OJEgsrpgI8yH8iFhROysptXvxEOXUuptAcd3i0Dqi2fzcy32Qgg7WPS9G/yQkIsgMB6vFOQ==}
     peerDependencies:
       graphql: '*'
+    dependencies:
+      graphql: 16.5.0
+    dev: false
+
+  /@pothos/core/3.12.2_graphql@16.5.0:
+    resolution: {integrity: sha512-oZ+Qde2LZvP9ApAdZGEFW2sryv/ZLhBp4Duaj+dO6H93TRSJTbazWk96yCRvbAIyAwRMnlnyV3ytIZttLrQ2gQ==}
+    peerDependencies:
+      graphql: '>=15.1.0'
     dependencies:
       graphql: 16.5.0
     dev: false
