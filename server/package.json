@@ -8,9 +8,14 @@
     "prisma:studio": "prisma studio"
   },
   "devDependencies": {
-    "prisma": "^4.0.0"
+    "@tsconfig/node18": "^1.0.1",
+    "prisma": "^4.0.0",
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@prisma/client": "^4.0.0"
+    "@prisma/client": "^4.0.0",
+    "fastify": "^4.2.0",
+    "graphql": "^16.5.0",
+    "graphql-ez": "^0.15.1"
   }
 }
