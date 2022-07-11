@@ -1,1 +1,13 @@
-{"dependencies":{"@graphql-ez/fastify":"^0.11.0","@graphql-ez/plugin-altair":"^0.9.10","@pothos/core":"^3.12.2","graphql":"^16.5.0","graphql-ez":"^0.15.1"},"devDependencies":{"prisma":"^4.0.0"}}
+{
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
+  "scripts": {
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio"
+  },
+  "devDependencies": {
+    "prisma": "^4.0.0"
+  }
+}
