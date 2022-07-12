@@ -2,17 +2,22 @@
   "0 debug pnpm:scope": {
     "selected": 1
   },
-  "1 error pnpm": {
-    "errno": 1,
-    "code": "ELIFECYCLE",
-    "pkgid": "@",
-    "stage": "start",
-    "script": "node server.js",
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: dev",
+      "code": "ENOENT",
+      "stack": "Error: not found: dev\n    at getNotFoundError (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:21148:51)\n    at Function.whichSync [as sync] (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:21225:13)\n    at getCommandAbsolutePathSync (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:22903:44)\n    at default_1 (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:22912:32)\n    at C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:184716:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "C:\\Users\\celeste",
     "err": {
       "name": "pnpm",
-      "message": "@ start: `node server.js`\nExit status 1",
-      "code": "ELIFECYCLE",
-      "stack": "pnpm: @ start: `node server.js`\nExit status 1\n    at EventEmitter.<anonymous> (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:108610:20)\n    at EventEmitter.emit (node:events:537:28)\n    at ChildProcess.<anonymous> (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:95176:18)\n    at ChildProcess.emit (node:events:537:28)\n    at maybeClose (node:internal/child_process:1091:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:302:5)"
+      "message": "not found: dev",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: dev\n    at getNotFoundError (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:21148:51)\n    at Function.whichSync [as sync] (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:21225:13)\n    at getCommandAbsolutePathSync (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:22903:44)\n    at default_1 (C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:22912:32)\n    at C:\\Users\\celeste\\AppData\\Roaming\\npm\\node_modules\\pnpm\\dist\\pnpm.cjs:184716:39"
     }
   }
 }
