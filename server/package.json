@@ -3,8 +3,8 @@
     "schema": "src/prisma/schema.prisma"
   },
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "dev": "ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
+    "start": "env-cmd ts-node src/index.ts",
+    "dev": "env-cmd ts-node-dev --respawn --transpile-only --exit-child src/index.ts",
     "prisma:migrate": "prisma migrate dev",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
@@ -23,8 +23,10 @@
     "@graphql-ez/plugin-altair": "^0.9.10",
     "@pothos/core": "^3.12.2",
     "@prisma/client": "^4.0.0",
+    "env-cmd": "^10.1.0",
     "fastify": "^4.2.0",
     "graphql": "^16.5.0",
-    "graphql-ez": "^0.15.1"
+    "graphql-ez": "^0.15.1",
+    "tslib": "^2.4.0"
   }
 }
