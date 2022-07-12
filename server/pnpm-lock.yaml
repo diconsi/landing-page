@@ -7,10 +7,12 @@ specifiers:
   '@prisma/client': ^4.0.0
   '@tsconfig/node18': ^1.0.1
   '@types/node': ^18.0.3
+  '@types/nodemailer': ^6.4.4
   env-cmd: ^10.1.0
   fastify: ^4.2.0
   graphql: ^16.5.0
   graphql-ez: ^0.15.1
+  nodemailer: ^6.7.7
   prisma: ^4.0.0
   ts-node: ^10.8.2
   ts-node-dev: ^2.0.0
@@ -26,11 +28,13 @@ dependencies:
   fastify: 4.2.0
   graphql: 16.5.0
   graphql-ez: 0.15.1_t3lr2fjnx3bpj42fk4whj66h4y
+  nodemailer: 6.7.7
   tslib: 2.4.0
 
 devDependencies:
   '@tsconfig/node18': 1.0.1
   '@types/node': 18.0.3
+  '@types/nodemailer': 6.4.4
   prisma: 4.0.0
   ts-node: 10.8.2_fxk5i3xm3ivo7fjwhcizcinpla
   ts-node-dev: 2.0.0_fxk5i3xm3ivo7fjwhcizcinpla
@@ -217,6 +221,12 @@ packages:
 
   /@types/node/18.0.3:
     resolution: {integrity: sha512-HzNRZtp4eepNitP+BD6k2L6DROIDG4Q0fm4x+dwfsr6LGmROENnok75VGw40628xf+iR24WeMFcHuuBDUAzzsQ==}
+
+  /@types/nodemailer/6.4.4:
+    resolution: {integrity: sha512-Ksw4t7iliXeYGvIQcSIgWQ5BLuC/mljIEbjf615svhZL10PE9t+ei8O9gDaD3FPCasUJn9KTLwz2JFJyiiyuqw==}
+    dependencies:
+      '@types/node': 18.0.3
+    dev: true
 
   /@types/strip-bom/3.0.0:
     resolution: {integrity: sha512-xevGOReSYGM7g/kUBZzPqCrR/KYAo+F0yiPc85WFTJa0MSLtyFTVTU6cJu/aV4mid7IffDIWqo69THF2o4JiEQ==}
@@ -670,6 +680,11 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
+    dev: false
+
+  /nodemailer/6.7.7:
+    resolution: {integrity: sha512-pOLC/s+2I1EXuSqO5Wa34i3kXZG3gugDssH+ZNCevHad65tc8vQlCQpOLaUjopvkRQKm2Cki2aME7fEOPRy3bA==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /normalize-path/3.0.0:
