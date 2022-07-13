@@ -8,7 +8,7 @@ export function UnderConstruction() {
     return (
         <Container>
             <Row>
-                <Text h1 color={theme?.colors.warning.value}>
+                <Text h1 color={theme?.colors.secondary.value}>
                     <Col>
                         <Icon icon={trafficCone} />
                         <Icon icon={barricade} />
@@ -24,13 +24,6 @@ export function UnderConstruction() {
                 </Col>
             </Row>
             <Spacer />
-            <Row justify="center" align="center">
-                <Button size='lg' color="gradient" auto ghost rounded>
-                    <Text css={{ color: "inherit" }}>
-                        Notify me
-                    </Text>
-                </Button>
-            </Row>
         </Container>
     )
 }
