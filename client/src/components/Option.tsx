@@ -10,9 +10,7 @@ export function Option() {
     return (
         <div>
             <NextUIProvider theme={createTheme({ type: 'dark' })}>
-                <div style={{ display: 'grid', placeContent: 'center' }}>
-                    <UnderConstruction />
-                </div>
+
                 <DownloadLink></DownloadLink>
                 <div style={{ display: 'grid', placeContent: 'center', minHeight: '80vh' }}>
                     <ContactForm></ContactForm>
