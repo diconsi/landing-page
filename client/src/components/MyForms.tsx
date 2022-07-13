@@ -58,6 +58,7 @@ export default function MyFormH() {
                     <Row justify="center">
                         {/* Nombre: {watch('name')} */}
                         <form onSubmit={handleSubmit(onSubmit)}>
+                            <Spacer y={1} />
                             <Input labelPlaceholder="Name"
                                 helperText={errors.name?.message}
                                 helperColor={errors.name ? "error" : "default"}
@@ -66,28 +67,29 @@ export default function MyFormH() {
                                     required: true,
                                     maxLength: 10,
                                 })} />
+                            <Spacer y={2} />
                             <Input labelPlaceholder="E-mail"
                                 helperText={errors.email?.message}
                                 helperColor={errors.email ? "error" : "default"} {...register('email', {
                                 })} />
+                            <Spacer y={2} />
                             <Input labelPlaceholder="Phone"
                                 helperText={errors.phone?.message}
                                 helperColor={errors.phone ? "error" : "default"}
                                 type="text" {...register('phone')} />
-                            <Checkbox isRounded={true} color="success" defaultSelected={true}>
-                                Success
-                            </Checkbox>
-                            <Row>
-                                <Button size="xs" onClick={() => reset()} bordered color="error"> Reset </Button>
-                                <Spacer x={2} />
-                                <Button size="xs" type="submit" bordered color="success"> Enviar </Button>
-                            </Row>
+                            <Spacer y={2} />
                             <Textarea labelPlaceholder="Message"
                                 helperText={errors.message?.message}
                                 helperColor={errors.message ? "error" : "default"}
                                 {...register('message', {
                                     required: true,
                                 })} />
+                            <Spacer x={2} />
+                            <Row>
+                                <Button size="xs" onClick={() => reset()} bordered color="error"> Reset </Button>
+                                <Spacer x={2} />
+                                <Button size="xs" type="submit" bordered color="success"> Enviar </Button>
+                            </Row>
                         </form>
                     </Row>
                 </Container>
