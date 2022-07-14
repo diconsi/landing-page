@@ -26,13 +26,6 @@ export function ContactForm() {
   )
 
   const form = useForm<ContactFormType>({
-    defaultValues:
-    {
-      name: 'Celeste',
-      email: 'a@gmail.com',
-      phone: '1111111111',
-      message: 'loquesea',
-    },
     mode: 'onChange',
     resolver: zodResolver(schema),
   })
