@@ -7,13 +7,12 @@ import { Section } from './components/Section'
 import { ContactInfo } from './components/ContactInfo'
 
 function App() {
-
   return (
     <NextUIProvider theme={createTheme({ type: 'dark' })}>
       <Section>
         <div style={{ display: 'grid', placeContent: 'center' }}>
-          <img src={Logo} alt="" height={100} />
-          <Spacer y={2} />
+          <img src={Logo} alt="Industrial Code Logo" height={100} />
+          <Spacer y={5} />
           <UnderConstruction />
           <div style={{ display: 'grid', placeContent: 'center' }}>
             <Button as="a" size='lg' color="gradient" auto ghost rounded href='#contact'>
@@ -25,7 +24,7 @@ function App() {
         </div>
       </Section>
       <Section id="contact">
-        <Row>
+        <Row align="center">
           <Col>
             <ContactInfo></ContactInfo>
           </Col>
@@ -34,7 +33,7 @@ function App() {
           </Col>
         </Row>
       </Section>
-      <Section>
+      <Section id="service">
         <ServiceInfo></ServiceInfo>
       </Section>
     </NextUIProvider>
