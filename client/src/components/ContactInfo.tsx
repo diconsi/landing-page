@@ -26,7 +26,7 @@ export function ContactInfo() {
           <Spacer />
           <div>
             <Text size="0.8em">Email</Text>
-            <Text>Rene@gmail.com</Text>
+            <Text>info@industrial-code</Text>
           </div>
         </Row>
         <Spacer />
@@ -37,7 +37,7 @@ export function ContactInfo() {
           <Spacer />
           <div>
             <Text size="0.8em">Phone</Text>
-            <Text>+52 81 8250 2376 </Text>
+            <Text>+52 81 28 92 75 09</Text>
           </div>
         </Row>
         <Spacer />
