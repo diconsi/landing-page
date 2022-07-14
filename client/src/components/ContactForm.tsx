@@ -43,52 +43,54 @@ export function ContactForm() {
 
     return (
         <>
-            <Container>
-                <Row justify="center">
-                    <Col>
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                            <Container>
-                                <Input labelPlaceholder="Name"
-                                    helperText={errors.name?.message}
-                                    helperColor={errors.name ? "error" : "default"}
-                                    type="text"
-                                    {...register('name', {
-                                        required: true,
-                                        maxLength: 10,
-                                    })} />
-                                <Spacer y={2} />
-                                <Input labelPlaceholder="E-mail"
-                                    helperText={errors.email?.message}
-                                    helperColor={errors.email ? "error" : "default"} {...register('email', {
-                                        required: true,
-                                    })} />
-                                <Spacer y={2} />
-                                <Input labelPlaceholder="Phone"
-                                    helperText={errors.phone?.message}
-                                    helperColor={errors.phone ? "error" : "default"}
-                                    type="text" {...register('phone', {
-                                        required: true,
-                                    })} />
-                                <Spacer y={2} />
-                                <Textarea labelPlaceholder="Message"
-                                    helperText={errors.message?.message}
-                                    helperColor={errors.message ? "error" : "default"}
-                                    {...register('message')} />
-                                <Spacer y={2} />
-                                <Row>
-                                    <Button size="xs" onClick={() => reset()} rounded ghost color="secondary">
-                                        Reset
-                                    </Button>
-                                    <Spacer x={2} />
-                                    <Button size="xs" type="submit" rounded color="secondary">
-                                        Enviar
-                                    </Button>
-                                </Row>
-                            </Container>
-                        </form>
-                    </Col>
-                </Row>
-            </Container>
+            <Row justify="center">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <Input
+                        size="xl"
+                        labelPlaceholder="Name"
+                        helperText={errors.name?.message}
+                        helperColor={errors.name ? "error" : "default"}
+                        type="text"
+                        {...register('name', {
+                            required: true,
+                            maxLength: 10,
+                        })} />
+                    <Spacer y={2} />
+                    <Input
+                        size="xl"
+                        labelPlaceholder="E-mail"
+                        helperText={errors.email?.message}
+                        helperColor={errors.email ? "error" : "default"} {...register('email', {
+                            required: true,
+                        })} />
+                    <Spacer y={2} />
+                    <Input
+                        size="xl"
+                        labelPlaceholder="Phone"
+                        helperText={errors.phone?.message}
+                        helperColor={errors.phone ? "error" : "default"}
+                        type="text" {...register('phone', {
+                            required: true,
+                        })} />
+                    <Spacer y={2} />
+                    <Textarea
+                        size="xl"
+                        labelPlaceholder="Message"
+                        helperText={errors.message?.message}
+                        helperColor={errors.message ? "error" : "default"}
+                        {...register('message')} />
+                    <Spacer y={2} />
+                    <Row>
+                        <Button size="xs" onClick={() => reset()} rounded ghost color="secondary">
+                            Reset
+                        </Button>
+                        <Spacer x={2} />
+                        <Button size="xs" type="submit" rounded color="secondary">
+                            Enviar
+                        </Button>
+                    </Row>
+                </form>
+            </Row>
         </>
     )
 }
