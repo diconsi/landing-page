@@ -14,7 +14,7 @@ function App() {
           <img src={Logo} alt="Industrial Code Logo" height={100} />
           <Spacer y={5} />
           <UnderConstruction />
-          <div style={{ display: 'grid', placeContent: 'center' }}>
+          <Row justify="center" align="center">
             <Button
               as="a"
               size="lg"
@@ -22,13 +22,26 @@ function App() {
               auto
               ghost
               rounded
+              href="#service"
+            >
+              <Text css={{ color: 'inherit' }}>
+                Learn more
+              </Text>
+            </Button>
+            <Spacer />
+            <Button
+              as="a"
+              size="lg"
+              color="gradient"
+              auto
+              rounded
               href="#contact"
             >
               <Text css={{ color: 'inherit' }}>
                 Notify me
               </Text>
             </Button>
-          </div>
+          </Row>
         </div>
       </Section>
       <Section id="contact">
