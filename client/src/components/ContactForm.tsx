@@ -20,7 +20,8 @@ export function ContactForm() {
   const [emailSend, emailSendMutation] = useMutation(
     (mutation, args: { input: emailCreateInput }) => mutation.emailSend(args),
     {
-      onCompleted: (data) => { console.log(data) },
+      // TODO: Replace alert with a notification
+      onCompleted: (data) => { alert(data) },
       onError: (error) => { alert(error) },
     },
   )
@@ -57,12 +58,6 @@ export function ContactForm() {
         <Card css={{ backgroundColor: theme?.colors.secondaryLightActive.value }}>
           <Card.Body>{emailSendMutation.data}</Card.Body>
         </Card>
-      )}
-      {emailSendMutation.isLoading
-      && (
-      <Card css={{ backgroundColor: theme?.colors.secondaryLightActive.value }}>
-        <Card.Body>{emailSendMutation.isLoading}</Card.Body>
-      </Card>
       )}
       <Col>
         <Input
@@ -117,7 +112,6 @@ export function ContactForm() {
           }
           >
             Send
-
           </Button>
         </Row>
       </Col>
