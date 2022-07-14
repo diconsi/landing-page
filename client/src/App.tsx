@@ -1,6 +1,6 @@
 import { Button, Text, createTheme, NextUIProvider, Row, Spacer, Container, Col } from '@nextui-org/react'
 import { UnderConstruction } from './components/UnderConstruction'
-import { ServiceInfo } from './components/ServiceSection'
+import { ServiceInfo } from './components/ServiceInfo'
 import { ContactForm } from './components/ContactForm'
 import Logo from './img/industrial-code-logo-2022.svg'
 import { Section } from './components/Section'
