@@ -20,8 +20,8 @@ export function ContactForm() {
   const [emailSend, emailSendMutation] = useMutation(
     (mutation, args: { input: emailCreateInput }) => mutation.emailSend(args),
     {
-      // onCompleted: (data) => { console.log(data) },
-      // onError: (error) => { alert(error) },
+      onCompleted: (data) => { console.log(data) },
+      onError: (error) => { alert(error) },
     },
   )
 
