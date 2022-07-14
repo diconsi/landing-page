@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Button, Col, Input, Row, Spacer, Textarea } from '@nextui-org/react'
+import { Button, Card, Col, Input, Loading, Row, Spacer, Textarea, useTheme } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import paperPlaneRight from '@iconify/icons-ph/paper-plane-right'
 import { useMutation } from '../gqty'
@@ -17,15 +17,22 @@ const schema = z.object({
 type ContactFormType = z.infer<typeof schema>
 
 export function ContactForm() {
-  const [emailSend] = useMutation(
+  const [emailSend, emailSendMutation] = useMutation(
     (mutation, args: { input: emailCreateInput }) => mutation.emailSend(args),
     {
-      onCompleted: (data) => { console.log(data) },
-      onError: (error) => { console.log(error) },
+      // onCompleted: (data) => { console.log(data) },
+      // onError: (error) => { alert(error) },
     },
   )
 
   const form = useForm<ContactFormType>({
+    defaultValues:
+    {
+      name: 'Celeste',
+      email: 'a@gmail.com',
+      phone: '1111111111',
+      message: 'loquesea',
+    },
     mode: 'onChange',
     resolver: zodResolver(schema),
   })
@@ -43,9 +50,27 @@ export function ContactForm() {
       },
     })
   }
-
+  const { theme } = useTheme()
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)}>
+      {emailSendMutation.error
+      && (
+      <Card css={{ backgroundColor: theme?.colors.error.value }}>
+        <Card.Body>{emailSendMutation.error?.message}</Card.Body>
+      </Card>
+      )}
+      {emailSendMutation.data
+      && (
+        <Card css={{ backgroundColor: theme?.colors.secondaryLightActive.value }}>
+          <Card.Body>{emailSendMutation.data}</Card.Body>
+        </Card>
+      )}
+      {emailSendMutation.isLoading
+      && (
+      <Card css={{ backgroundColor: theme?.colors.secondaryLightActive.value }}>
+        <Card.Body>{emailSendMutation.isLoading}</Card.Body>
+      </Card>
+      )}
       <Col>
         <Input
           fullWidth
@@ -88,8 +113,18 @@ export function ContactForm() {
             Reset
           </Button>
           <Spacer />
-          <Button type="submit" auto rounded color="secondary" iconRight={<Icon icon={paperPlaneRight} />}>
+          <Button
+            type="submit"
+            auto
+            rounded
+            color="secondary"
+            iconRight={emailSendMutation.isLoading
+              ? (<Loading type="spinner" color="currentColor" size="sm" />)
+              : (<Icon icon={paperPlaneRight} />)
+          }
+          >
             Send
+
           </Button>
         </Row>
       </Col>
