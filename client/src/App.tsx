@@ -1,4 +1,4 @@
-import { Button, Text, createTheme, NextUIProvider, Row, Spacer, Container, Col } from '@nextui-org/react'
+import { Button, Col, NextUIProvider, Row, Spacer, Text, createTheme } from '@nextui-org/react'
 import { UnderConstruction } from './components/UnderConstruction'
 import { ServiceInfo } from './components/ServiceInfo'
 import { ContactForm } from './components/ContactForm'
@@ -15,8 +15,16 @@ function App() {
           <Spacer y={5} />
           <UnderConstruction />
           <div style={{ display: 'grid', placeContent: 'center' }}>
-            <Button as="a" size='lg' color="gradient" auto ghost rounded href='#contact'>
-              <Text css={{ color: "inherit" }}>
+            <Button
+              as="a"
+              size="lg"
+              color="gradient"
+              auto
+              ghost
+              rounded
+              href="#contact"
+            >
+              <Text css={{ color: 'inherit' }}>
                 Notify me
               </Text>
             </Button>
@@ -26,15 +34,15 @@ function App() {
       <Section id="contact">
         <Row align="center">
           <Col>
-            <ContactInfo></ContactInfo>
+            <ContactInfo />
           </Col>
           <Col>
-            <ContactForm></ContactForm>
+            <ContactForm />
           </Col>
         </Row>
       </Section>
       <Section id="service">
-        <ServiceInfo></ServiceInfo>
+        <ServiceInfo />
       </Section>
     </NextUIProvider>
   )
