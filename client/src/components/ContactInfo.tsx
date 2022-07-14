@@ -7,9 +7,14 @@ import { Container, Row, Spacer, Text } from "@nextui-org/react";
 export function ContactInfo() {
     return (
         <div>
-            <Text h3>
-                Contact Us
-            </Text>
+            <Row justify="center" align="center">
+                <Spacer x={1} />
+                <Text h3>
+                    Contact Us
+                </Text>
+                <Spacer x={1} />
+                <Spacer y={4} />
+            </Row>
             <Container>
                 <Row justify="center" align="center">
                     <Text h3>
@@ -19,7 +24,7 @@ export function ContactInfo() {
                     <Spacer y={4} />
                     <div>
                         <Text size="0.8em">Email</Text>
-                        <Text>Email</Text>
+                        <Text>Rene@gmail.com</Text>
                     </div>
                 </Row>
                 <Row justify="center" align="center">
@@ -30,7 +35,7 @@ export function ContactInfo() {
                     <Spacer y={4} />
                     <div>
                         <Text size="0.8em">Phone</Text>
-                        <Text>phone</Text>
+                        <Text>+52 81 82 50 23 76 </Text>
                     </div>
                 </Row>
                 <Row justify="center" align="center">
@@ -41,7 +46,7 @@ export function ContactInfo() {
                     <Spacer y={4} />
                     <div>
                         <Text size="0.8em">Address</Text>
-                        <Text>Address</Text>
+                        <Text>Calle Parque España</Text>
                     </div>
                 </Row>
             </Container>

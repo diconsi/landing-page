@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Button, Col, Container, Grid, Input, Row, Spacer, Textarea } from "@nextui-org/react";
+import { Button, Input, Row, Spacer, Textarea } from "@nextui-org/react";
 import { emailCreateInput, useMutation } from "../gqty";
 import data from "@iconify/icons-ph/barricade-light";
 

@@ -15,13 +15,13 @@ function App() {
           <img src={Logo} alt="" height={100} />
           <Spacer y={2} />
           <UnderConstruction />
-          <Row>
+          <div style={{ display: 'grid', placeContent: 'center' }}>
             <Button as="a" size='lg' color="gradient" auto ghost rounded href='#contact'>
               <Text css={{ color: "inherit" }}>
                 Notify me
               </Text>
             </Button>
-          </Row>
+          </div>
         </div>
       </Section>
       <Section id="contact">

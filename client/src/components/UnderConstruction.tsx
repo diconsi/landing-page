@@ -8,15 +8,15 @@ export function UnderConstruction() {
     return (
         <Container>
             <Row>
-                <Text h1 color={theme?.colors.secondary.value}>
+                <Text h2 color={theme?.colors.secondary.value}>
                     <Col>
                         <Icon icon={trafficCone} />
                         <Icon icon={barricade} />
                     </Col>
                 </Text>
                 <Col>
-                    <Text h1>Under construction</Text>
-                    <Text h2>Coming soon</Text>
+                    <Text h2>Under construction</Text>
+                    <Text h3>Coming soon</Text>
                     <Text color="dimmed">
                         We are working on our website. <br />
                         Stay tuned for some exciting updates.

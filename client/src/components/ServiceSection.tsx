@@ -13,11 +13,11 @@ export function ServiceInfo() {
                 Discover our service catalog
             </Text>
             <Spacer y={2}></Spacer>
-            <Row>
-                <Button iconRight={<Icon icon={arrowDown} />} as="a" rounded auto color="primary" href="https://aws-bucket-diconsi.s3.us-east-2.amazonaws.com/industrial_code/Industrial-Code.pdf">
+            <div style={{ display: 'grid', placeContent: 'center' }}>
+                <Button iconRight={<Icon icon={arrowDown} />} as="a" rounded auto ghost color="gradient" href="https://aws-bucket-diconsi.s3.us-east-2.amazonaws.com/industrial_code/Industrial-Code.pdf">
                     Download Here
                 </Button>
-            </Row>
+            </div>
         </Container>
     )
 }
