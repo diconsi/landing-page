@@ -2,7 +2,7 @@ import { Button, Col, NextUIProvider, Row, Spacer, Text, createTheme } from '@ne
 import { UnderConstruction } from './components/UnderConstruction'
 import { ServiceInfo } from './components/ServiceInfo'
 import { ContactForm } from './components/ContactForm'
-import Logo from './img/industrial-code-logo-2022.svg'
+import LogoDark from './img/industrial-code-logo-dark-2022.svg'
 import { Section } from './components/Section'
 import { ContactInfo } from './components/ContactInfo'
 
@@ -11,7 +11,7 @@ function App() {
     <NextUIProvider theme={createTheme({ type: 'dark' })}>
       <Section>
         <div style={{ display: 'grid', placeContent: 'center' }}>
-          <img src={Logo} alt="Industrial Code Logo" height={100} />
+          <img src={LogoDark} alt="Industrial Code Logo" height={100} />
           <Spacer y={5} />
           <UnderConstruction />
           <Row justify="center" align="center">

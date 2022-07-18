@@ -1,9 +1,11 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { Button, Card, Col, Input, Loading, Row, Spacer, Textarea, useTheme } from '@nextui-org/react'
+import { Avatar, Button, Card, Input, Loading, Row, Spacer, Text, Textarea, useTheme } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import paperPlaneRight from '@iconify/icons-ph/paper-plane-right'
+import x from '@iconify/icons-ph/x'
+import check from '@iconify/icons-ph/check'
 import { useMutation } from '../gqty'
 import type { emailCreateInput } from '../gqty'
 
@@ -17,12 +19,12 @@ const schema = z.object({
 type ContactFormType = z.infer<typeof schema>
 
 export function ContactForm() {
-  const [emailSend, emailSendMutation] = useMutation(
+  const [emailSend, mutation] = useMutation(
     (mutation, args: { input: emailCreateInput }) => mutation.emailSend(args),
     {
       // TODO: Replace alert with a notification
-      onCompleted: (data) => { alert(data) },
-      onError: (error) => { alert(error) },
+      // onCompleted: (data) => { alert(data) },
+      // onError: (error) => { alert(error) },
     },
   )
 
@@ -30,7 +32,7 @@ export function ContactForm() {
     mode: 'onChange',
     resolver: zodResolver(schema),
   })
-  const { formState: { errors } } = form
+  const { formState } = form
 
   const handleSubmit = (data: ContactFormType) => {
     emailSend({
@@ -47,74 +49,86 @@ export function ContactForm() {
   const { theme } = useTheme()
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)}>
-      {emailSendMutation.error
+      {mutation.error
       && (
-      <Card css={{ backgroundColor: theme?.colors.error.value }}>
-        <Card.Body>{emailSendMutation.error?.message}</Card.Body>
-      </Card>
-      )}
-      {emailSendMutation.data
-      && (
-        <Card css={{ backgroundColor: theme?.colors.secondaryLightActive.value }}>
-          <Card.Body>{emailSendMutation.data}</Card.Body>
+        <Card css={{ backgroundColor: theme?.colors.errorLight.value }}>
+          <Card.Body>
+            <Row align="center">
+              <Avatar color="error" squared icon={<Icon icon={x} fill="currentColor" />} />
+              <Spacer />
+              <Text>{mutation.error?.message}</Text>
+            </Row>
+          </Card.Body>
         </Card>
       )}
-      <Col>
+      {mutation.data
+      && (
+        <Card>
+          <Card.Body css={{ backgroundColor: theme?.colors.successLight.value }}>
+            <Row align="center">
+              <Avatar color="success" squared icon={<Icon icon={check} fill="currentColor" />} />
+              <Spacer />
+              <Text>{mutation.data}</Text>
+            </Row>
+          </Card.Body>
+        </Card>
+      )}
+      <Spacer />
+      <Spacer />
+      <Input
+        fullWidth
+        labelPlaceholder="Name"
+        helperText={formState.errors.name?.message}
+        helperColor={formState.errors.name ? 'error' : 'default'}
+        type="text"
+        {...form.register('name')}
+      />
+      <Spacer y={2} />
+      <Row>
         <Input
           fullWidth
-          labelPlaceholder="Name"
-          helperText={errors.name?.message}
-          helperColor={errors.name ? 'error' : 'default'}
-          type="text"
-          {...form.register('name')}
+          labelPlaceholder="Email"
+          helperText={formState.errors.email?.message}
+          helperColor={formState.errors.email ? 'error' : 'default'}
+          {...form.register('email')}
         />
-        <Spacer y={2} />
-        <Row>
-          <Input
-            fullWidth
-            labelPlaceholder="Email"
-            helperText={errors.email?.message}
-            helperColor={errors.email ? 'error' : 'default'}
-            {...form.register('email')}
-          />
-          <Spacer />
-          <Input
-            fullWidth
-            labelPlaceholder="Phone"
-            helperText={errors.phone?.message}
-            helperColor={errors.phone ? 'error' : 'default'}
-            type="tel"
-            {...form.register('phone')}
-          />
-        </Row>
-        <Spacer y={2} />
-        <Textarea
+        <Spacer />
+        <Input
           fullWidth
-          labelPlaceholder="Message"
-          helperText={errors.message?.message}
-          helperColor={errors.message ? 'error' : 'default'}
-          {...form.register('message')}
+          labelPlaceholder="Phone"
+          helperText={formState.errors.phone?.message}
+          helperColor={formState.errors.phone ? 'error' : 'default'}
+          type="tel"
+          {...form.register('phone')}
         />
-        <Spacer y={2} />
-        <Row justify="flex-end">
-          <Button onClick={() => form.reset()} auto rounded flat color="secondary">
-            Reset
-          </Button>
-          <Spacer />
-          <Button
-            type="submit"
-            auto
-            rounded
-            color="secondary"
-            iconRight={emailSendMutation.isLoading
-              ? (<Loading type="spinner" color="currentColor" size="sm" />)
-              : (<Icon icon={paperPlaneRight} />)
+      </Row>
+      <Spacer y={2} />
+      <Textarea
+        fullWidth
+        labelPlaceholder="Message"
+        helperText={formState.errors.message?.message}
+        helperColor={formState.errors.message ? 'error' : 'default'}
+        {...form.register('message')}
+      />
+      <Spacer y={2} />
+      <Row justify="flex-end">
+        <Button onClick={() => form.reset()} auto rounded flat color="secondary">
+          Reset
+        </Button>
+        <Spacer />
+        <Button
+          type="submit"
+          auto
+          rounded
+          color="secondary"
+          iconRight={mutation.isLoading
+            ? (<Loading type="spinner" color="currentColor" size="sm" />)
+            : (<Icon icon={paperPlaneRight} />)
           }
-          >
-            Send
-          </Button>
-        </Row>
-      </Col>
+        >
+          Send
+        </Button>
+      </Row>
     </form>
   )
 }

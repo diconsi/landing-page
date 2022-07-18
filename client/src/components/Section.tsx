@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
-export function Section(props: { id?: string, children: ReactNode }) {
+export function Section(props: React.HTMLAttributes<HTMLDivElement> & { children: ReactNode }) {
   return (
-    <div id={props.id} style={{ height: '100vh', display: 'grid', placeContent: 'center' }}>
+    <div {...props} style={{ height: '100vh', display: 'grid', placeContent: 'center', ...props.style }}>
       {props.children}
     </div>
   )
